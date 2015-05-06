@@ -8,24 +8,24 @@ var jsonnet = new Jsonnet();
 var PluginError = gutil.PluginError;
 
 
-module.exports = function (opt) {
+module.exports = function () {
 
 	function transform(file, enc, cb) {
 		if (file.isNull()) return cb(null, file);
 		if (file.isStream()) return cb(new PluginError('gulp-jsonnet', 'Streaming not supported'));
 
-		var dest = replaceExtension(file.path);
+		var dest = gutil.replaceExtension(file.path, '.json');
 		var code = file.contents.toString('utf8');
 		var result;
 		
 		try {
-			jsonnet.eval(code);	
+			result = jsonnet.eval(code);	
 		} catch(ex) {
 			return cb(new PluginError('gulp-jsonnet', ex));
 		}
 
-		file.contents = new Buffer(result);
 		file.path = dest;
+		file.contents = new Buffer(JSON.stringify(result));
 		cb(null, file);
 	}
 

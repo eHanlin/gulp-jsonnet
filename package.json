@@ -2,17 +2,18 @@
   "author" : "hotdog929 <hotdog929@gmail.com>",
   "name" : "gulp-jsonnet",
   "description" : "Compile jsonnet files",
-  "version" : "0.0.1",
+  "version" : "0.0.2",
   "repository" : {
     "type" : "git",
     "url" : "https://github.com/eHanlin/gulp-jsonnet.git"
   },
   "main" : "index.js",
-  "devDependencies" : {
+  "dependencies" : {
     "jsonnet" : "0.5.0-beta",
     "gulp-util" : "^3.0.4",
-    "through2" : "^0.6.5"
+    "through2" : "^0.6.5",
+    "utf8" : "^2.1.0"    
   },
   "license" : "MIT",
-  "keywords" : ["gulp", "jsonnet", "gulpplugin"]
+  "keywords" : ["gulp-jsonnet", "gulp", "jsonnet", "gulpplugin"]
 }

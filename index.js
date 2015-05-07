@@ -1,6 +1,7 @@
 var through = require('through2');
 var path = require('path');
 var gutil = require('gulp-util');
+var utf8 = require('utf8');
 var Jsonnet = require('jsonnet');
 
 var jsonnet = new Jsonnet();
@@ -25,7 +26,7 @@ module.exports = function () {
 		}
 
 		file.path = dest;
-		file.contents = new Buffer(JSON.stringify(result));
+		file.contents = new Buffer(utf8.decode(JSON.stringify(result)));
 		cb(null, file);
 	}
 

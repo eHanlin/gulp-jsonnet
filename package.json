@@ -2,7 +2,7 @@
   "author" : "hotdog929 <hotdog929@gmail.com>",
   "name" : "gulp-jsonnet",
   "description" : "Compile jsonnet files",
-  "version" : "0.0.2",
+  "version" : "0.0.3",
   "repository" : {
     "type" : "git",
     "url" : "https://github.com/eHanlin/gulp-jsonnet.git"

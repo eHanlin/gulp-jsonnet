@@ -16,7 +16,7 @@ module.exports = function () {
 		if (file.isStream()) return cb(new PluginError('gulp-jsonnet', 'Streaming not supported'));
 
 		var dest = gutil.replaceExtension(file.path, '.json');
-		var code = file.contents.toString('utf8');
+		var code = file.contents;
 		var result;
 		
 		try {
